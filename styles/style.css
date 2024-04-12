@@ -1,0 +1,144 @@
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+/* target the id #*/
+#game-intro {
+  background: url(/assets/Neighborhood.jpg) no-repeat center;
+  background-size: cover;
+}
+/* target the class .*/
+.start-dog {
+  width: 20%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  padding: 5vh;
+  /* whit this property my images goes in the center */
+  margin: auto;
+}
+
+#game-intro h3 {
+  font-size: 7em;
+  text-align: center;
+}
+
+#start-button {
+  display: flex;
+  margin: 5px 470px 5px 470px;
+  padding: 5px;
+  border: 5px;
+}
+
+/* image for the 2nd screen */
+#game-container {
+  display: none;
+  background: url(/assets/Neighborhood.jpg) no-repeat center;
+  background-size: cover;
+}
+/* style of the images */
+.img-food {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  animation: efood infinite linear 3s; /*duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.img-bush {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  animation: ebush infinite linear 5s; /*duration timing-function delay iteration-count direction fill-mode; */
+}
+
+.img-cat {
+  width: 100px;
+  height: 100px;
+  display: grid;
+  place-items: center;
+  position: relative;
+  animation: ecat infinite linear 6s; /*duration timing-function delay iteration-count direction fill-mode; */
+}
+
+#elements-falling {
+  width: 80px;
+}
+
+#score {
+  display: flex;
+  flex-direction: row;
+}
+
+#elements-falling {
+  display: flex;
+  flex-direction: row;
+}
+
+#path {
+  background: url(/assets/basicPath.jpg);
+  height: 50vw;
+  width: 50vw;
+  position: relative;
+  top: -10vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.img-dog {
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  margin: auto;
+}
+
+/* image for the last screen */
+#game-end {
+  display: none;
+  background: url(/assets/Neighborhood.jpg) no-repeat center;
+  background-size: cover;
+}
+
+@keyframes efood {
+  0% {
+    top: -30vh;
+  }
+  100% {
+    top: 100vh;
+  }
+}
+
+@keyframes ebush {
+  0% {
+    top: -30vh;
+  }
+  100% {
+    top: 100vh;
+  }
+}
+
+@keyframes ecat {
+  0% {
+    top: -30vh;
+  }
+  100% {
+    top: 100vh;
+  }
+}

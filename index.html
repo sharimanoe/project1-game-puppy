@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title>Wellcome</title>
+  </head>
+  <body>
+    <!-- start screen -->
+    <div id="game-intro">
+      <h3>Happy Dog</h3>
+      <br />
+      <h1>
+        <img class="start-dog" src="/assets/dog.png" alt="start dog" />
+      </h1>
+      <button id="start-button">start your owner training</button>
+
+      <!-- <p>Use the left and right arrow to control the car!</p> -->
+      <!-- <img src="./images/arrows.png" alt="" class="arrows-img" /> -->
+    </div>
+
+    <!-- Playing screen -->
+    <div id="game-container">
+      <h1>play screen</h1>
+      <div id="game-screen"></div>
+      <div id="score">
+        <div class="food">Food: 10</div>
+        <div class="bush">Bush: 10</div>
+        <div class="Water">Water: 10</div>
+        <div class="cat">Petting: 10</div>
+      </div>
+      <div id="path">
+        <div id="elements-falling">
+          <div id="food-icon">
+            <img class="img-food" src="/assets/food.png" alt="food icon" />
+          </div>
+          <div id="bush-icon">
+            <img class="img-bush" src="/assets/bush.png" alt="bush icon" />
+          </div>
+          <div id="cat-icon">
+            <img class="img-cat" src="/assets/cat.png" alt="cat icon" />
+          </div>
+          <!-- <div id="bush">
+          <img class="img-bush" src="/assets/bush.png" alt="bush icon" />
+        </div>  -->
+        </div>
+
+        <div id="dog">
+          <img class="img-dog" src="/assets/dog.png" alt="game dog" />
+        </div>
+      </div>
+      <div class="timer">Timer: 01:00</div>
+    </div>
+
+    <!-- End game screen -->
+    <div id="game-end">
+      <!-- <img src="./images/logo.png" alt="" class="logo-img" /> -->
+      <h1>Game Over</h1>
+      <br />
+      <button id="restart-button">Restart</button>
+    </div>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/game.js"></script>
+    <script type="text/javascript" src="js/player.js"></script>
+    <script type="text/javascript" src="js/obstacle.js"></script>
+  </body>
+</html>
