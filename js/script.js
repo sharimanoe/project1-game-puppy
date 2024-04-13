@@ -1,17 +1,7 @@
 // whith this sentence I set this page as the first one to be run by HTML
 window.onload = function () {
-  let startButton = document.getElementById("start-button");
-  startButton.addEventListener("click", startGame);
-
-  function startGame() {
-    startButton.disabled = true;
-
-    game = new Game();
-    game.start();
-  }
-
-  // Function that handles keydown event
-  window.addEventListener("keydown", handleKeydown);
+  const startButton = document.getElementById("start-button");
+  const restartButton = document.getElementById("restart-button");
 
   function handleKeydown(event) {
     const key = event.key;
@@ -32,4 +22,21 @@ window.onload = function () {
       }
     }
   }
+
+  // Function that handles keydown event
+  window.addEventListener("keydown", handleKeydown);
+
+  startButton.addEventListener("click", function () {
+    startGame();
+  });
+
+  function startGame() {
+    startButton.disabled = true;
+    game = new Game();
+    game.start();
+  }
+
+  restartButton.addEventListener("click", function () {
+    location.reload();
+  });
 };
