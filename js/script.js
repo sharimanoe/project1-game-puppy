@@ -2,6 +2,10 @@
 window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
+  //to handler the pop-up button
+  const clickBtn = document.getElementById("info-game");
+  const popup = document.getElementById("popup");
+  const closeBtn = document.getElementById("closeBtn");
 
   function handleKeydown(event) {
     const key = event.key;
@@ -35,6 +39,16 @@ window.onload = function () {
     game = new Game();
     game.start();
   }
+  //to handler the pop-up button
+  clickBtn.addEventListener("click", () => {
+    popup.style.display = "block";
+  });
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+  popup.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
 
   restartButton.addEventListener("click", function () {
     location.reload();

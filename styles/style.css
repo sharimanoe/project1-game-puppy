@@ -38,6 +38,83 @@ html {
   padding: 5px;
   border: 5px;
 }
+/* Game iformation button styling and PopUp */
+#info-game {
+  background-color: rgb(28, 16, 157);
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 30px;
+  border-radius: 20px;
+  box-shadow: 1px 6px 12px 0px rgb(0 0 0 / 13%);
+  cursor: pointer;
+  transition: 0.2s all ease-in-out;
+}
+
+#info-game:hover {
+  background-color: rgb(84, 68, 143);
+}
+
+#popup {
+  display: none;
+}
+
+.popup-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(96 95 127 / 70%);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.popup {
+  background-color: #ffffff;
+  padding: 20px 30px;
+  width: 50%;
+  border-radius: 15px;
+}
+.close-popup {
+  display: flex;
+  justify-content: flex-end;
+}
+.close-popup a {
+  font-size: 1.2rem;
+  background-color: rebeccapurple;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 10px;
+  display: inline-block;
+}
+.popup > h2 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+.popup > p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+.popup-btn {
+  display: inline-block;
+  text-decoration: none;
+  border: 2px solid rebeccapurple;
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin: 10px 0px;
+  transition: 0.2s all ease-in;
+}
+.popup-btn:hover {
+  background-color: rebeccapurple;
+  color: #fff;
+}
 
 /* image for the 2nd screen */
 #game-container {
@@ -52,7 +129,7 @@ html {
   display: grid;
   place-items: center;
   position: relative;
-  animation: efood infinite linear 3s; /*duration timing-function delay iteration-count direction fill-mode; */
+  animation: efood infinite linear 5s; /*duration timing-function delay iteration-count direction fill-mode; */
 }
 
 .img-bush {
@@ -61,7 +138,7 @@ html {
   display: grid;
   place-items: center;
   position: relative;
-  animation: ebush infinite linear 5s; /*duration timing-function delay iteration-count direction fill-mode; */
+  animation: ebush infinite linear 6s; /*duration timing-function delay iteration-count direction fill-mode; */
 }
 
 .img-cat {
@@ -70,7 +147,7 @@ html {
   display: grid;
   place-items: center;
   position: relative;
-  animation: ecat infinite linear 6s; /*duration timing-function delay iteration-count direction fill-mode; */
+  animation: ecat infinite linear 4s; /*duration timing-function delay iteration-count direction fill-mode; */
 }
 
 #elements-falling {
