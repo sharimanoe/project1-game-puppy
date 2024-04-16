@@ -25,6 +25,7 @@ body {
 #game-intro {
   background: url(/assets/park.jpg) no-repeat center;
   background-size: cover;
+  height: 100%;
 }
 
 /* target the class .*/
