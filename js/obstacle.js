@@ -1,30 +1,34 @@
-class Obstacles {
-  constructor(gameScreen, typeObstacle) {
-    this.gameScreen = gameScreen;
-    this.left = Math.floor(Math.random() * 300 + 70);
-    this.top = 0;
-    this.width = 100;
-    this.height = 150;
-    this.element = document.getElementsByClassName(typeObstacle)[0];
-    this.friendly = () => {
-      if (typeObstacle === "img-cat") {
-        return false;
-      } else {
-        return true;
-      }
-    };
+class Obstacles extends Component {
+  constructor(gameScreen, imgSrc) {
+    super(
+      gameScreen,
+      Math.floor(Math.random() * 300 + 70),
+      0,
+      100,
+      150,
+      imgSrc
+    );
+    // this.friendly = () => {
+    //   if (this.element.id === "img-cat") {
+    //     return false;
+    //   } else {
+    //     return true;
+    //   }
+    // };
+    this.friendly = this.imgSrc !== "/assets/cat.png";
   }
+  // this.width = 805;
+  // this.height = 792;
+  // this.element = document.getElementsByClassName(typeObstacle)[0];
+
+  move() {
+    this.top += 3;
+    this.updatePosition();
+  }
+
   updatePosition() {
-    console.log(`obstacles - element: ${this.element}`);
     // Update the obstacle's position based on the properties left and top
     this.element.style.left = `${this.left}px`;
     this.element.style.top = `${this.top}px`;
-  }
-
-  move() {
-    // Move the obstacle down by 3px
-    this.top += 3;
-    // Update the obstacle's position on the screen
-    this.updatePosition();
   }
 }

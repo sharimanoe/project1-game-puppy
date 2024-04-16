@@ -2,6 +2,8 @@
 window.onload = function () {
   const startButton = document.getElementById("start-button");
   const restartButton = document.getElementById("restart-button");
+  let game;
+  let timer;
   //to handler the pop-up button
   const clickBtn = document.getElementById("info-game");
   const popup = document.getElementById("popup");
@@ -14,14 +16,13 @@ window.onload = function () {
     // Check if the pressed key is in the possibleKeystrokes array
     if (possibleKeystrokes.includes(key)) {
       event.preventDefault();
-
-      // Update player's directionY based on the key pressed
+      // sets the speed of the element
       switch (key) {
         case "ArrowLeft":
-          game.player.directionY = -1;
+          game.player.directionY = -10;
           break;
         case "ArrowRight":
-          game.player.directionY = 1;
+          game.player.directionY = 10;
           break;
       }
     }
@@ -38,7 +39,37 @@ window.onload = function () {
     startButton.disabled = true;
     game = new Game();
     game.start();
+
+    if (timer) clearInterval(timer);
+    timer = startTimer();
   }
+
+  function startTimer() {
+    return setInterval(() => {
+      if (!game || game.gameIsOver) return;
+      const minutes = Math.floor(game.timeRemaining / 60)
+        .toString()
+        .padStart(2, "0");
+      const seconds = (game.timeRemaining % 60).toString().padStart(2, "0");
+
+      const timeRemainingContainer = document.getElementById("timer");
+      timeRemainingContainer.innerText = `${minutes}:${seconds}`;
+
+      game.timeRemaining--;
+
+      if (game.timeRemaining <= 0) {
+        clearInterval(timer);
+      }
+    }, 1000);
+  }
+
+  timer = startTimer();
+
+  const restartTimer = () => {
+    clearInterval(timer);
+    timer = startTimer();
+  };
+
   //to handler the pop-up button
   clickBtn.addEventListener("click", () => {
     popup.style.display = "block";

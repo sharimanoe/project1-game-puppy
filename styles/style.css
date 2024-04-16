@@ -4,25 +4,36 @@ html {
 }
 ::-webkit-scrollbar {
   width: 0; /* Remove scrollbar space */
-  background: transparent; /* Optional: just make scrollbar invisible */
+  /* background: transparent; Optional: just make scrollbar invisible */
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
 /* target the id #*/
 #game-intro {
-  background: url(/assets/Neighborhood.jpg) no-repeat center;
+  background: url(/assets/park.jpg) no-repeat center;
   background-size: cover;
 }
+
 /* target the class .*/
 .start-dog {
   width: 20%;
   height: 20%;
   display: flex;
   justify-content: center;
-  padding: 5vh;
+  padding: 5px;
   /* whit this property my images goes in the center */
   margin: auto;
 }
@@ -131,8 +142,77 @@ html {
 /* image for the 2nd screen */
 #game-container {
   display: none;
-  background: url(/assets/Neighborhood.jpg) no-repeat center;
+  position: relative;
+  background: url(/assets/park.jpg) no-repeat center;
   background-size: cover;
+  /* height: 100%;
+  width: 100%;
+  z-index: -1; */
+  background-color: rgba(38, 12, 12, 0.5);
+  width: 800px;
+  height: 600px;
+}
+
+#score {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  font-weight: bold;
+  font-size: 2rem;
+  color: #120a0a;
+  height: 100px;
+  height: 100%;
+  align-items: flex-end;
+  /* z-index: 2; */
+}
+
+/* #score h3 {
+  font-size: 7em;
+  text-align: center;
+} */
+
+#timer {
+  width: 100px;
+  height: 45px;
+  background-color: rgb(28, 16, 157);
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  /* font-weight: bold; */
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: auto;
+  border-radius: 20px;
+  box-shadow: 1px 6px 12px 0px rgb(0 0 0 / 13%);
+}
+
+/* #elements-falling {
+  display: flex;
+  flex-direction: row;
+} */
+
+#path {
+  background: url(/assets/livingroom2.jpg);
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-size: cover;
+  background-position: center;
+  /* z-index: 2; */
+  /* height: 670px;
+  width: 700px; */
+  height: 900px;
+  margin: 0 300px;
+  padding: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  border: 2px solid rgb(4, 39, 44);
+  width: 600px;
+  height: 500px;
+  left: 0;
+  right: 0;
+  bottom: 2em;
+  margin: auto;
 }
 /* style of the images */
 .img-food {
@@ -140,7 +220,7 @@ html {
   height: 100px;
   display: grid;
   place-items: center;
-  position: relative;
+  position: absolute;
   animation: efood infinite linear 5s; /*duration timing-function delay iteration-count direction fill-mode; */
 }
 
@@ -149,7 +229,7 @@ html {
   height: 100px;
   display: grid;
   place-items: center;
-  position: relative;
+  position: absolute;
   animation: ebush infinite linear 6s; /*duration timing-function delay iteration-count direction fill-mode; */
 }
 
@@ -158,36 +238,12 @@ html {
   height: 100px;
   display: grid;
   place-items: center;
-  position: relative;
+  position: absolute;
   animation: ecat infinite linear 4s; /*duration timing-function delay iteration-count direction fill-mode; */
 }
 
 #elements-falling {
   width: 80px;
-}
-
-#score {
-  display: flex;
-  flex-direction: row;
-}
-
-#elements-falling {
-  display: flex;
-  flex-direction: row;
-}
-
-#path {
-  background: url(/assets/basicPath.jpg);
-  height: 50vw;
-  width: 50vw;
-  position: relative;
-  top: -10vh;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
 }
 
 .img-dog {
@@ -201,8 +257,10 @@ html {
 /* image for the last screen */
 #game-end {
   display: none;
-  background: url(/assets/Neighborhood.jpg) no-repeat center;
+  background: url(/assets/park.jpg) no-repeat center;
   background-size: cover;
+  height: 100%;
+  height: 100%;
 }
 #game-end h1 {
   font-size: 5em;
@@ -228,27 +286,27 @@ html {
 
 @keyframes efood {
   0% {
-    top: -30vh;
+    top: -30px;
   }
   100% {
-    top: 100vh;
+    top: 100px;
   }
 }
 
 @keyframes ebush {
   0% {
-    top: -30vh;
+    top: -30px;
   }
   100% {
-    top: 100vh;
+    top: 100px;
   }
 }
 
 @keyframes ecat {
   0% {
-    top: -30vh;
+    top: -30px;
   }
   100% {
-    top: 100vh;
+    top: 100px;
   }
 }
