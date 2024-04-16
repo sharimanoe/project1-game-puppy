@@ -17,64 +17,42 @@
       </h1>
       <button id="start-button">start your owner training</button>
       <button id="info-game">Information about the game</button>
+      <!-- popUp main Screen -->
       <div id="popup">
         <div class="popup-container">
           <div class="popup">
             <div class="close-popup" id="closeBtn"><a href="#">X</a></div>
             <h2>Happy dog Game!</h2>
             <p>
-              The player needs to take care of the dog that means capture their
-              needs and avoid the cat enemies.
+              The objective of the game is to take care of a dog by catching
+              falling food and grass while avoiding cats.
             </p>
-            <!-- <a href="#" class="popup-btn">View Details</a> -->
           </div>
         </div>
       </div>
-
-      <!-- <p>Use the left and right arrow to control the car!</p> -->
-      <!-- <img src="./images/arrows.png" alt="" class="arrows-img" /> -->
     </div>
 
     <!-- Playing screen -->
     <div id="game-container">
-      <h1>play screen</h1>
+      <h1>Game scores:</h1>
       <div id="game-screen"></div>
       <div id="score">
         <div class="food">Food: 10</div>
         <div class="bush">Bush: 10</div>
-        <div class="Water">Water: 10</div>
-        <div class="cat">Petting: 10</div>
+        <div id="timer">00:30</div>
       </div>
       <div id="path">
-        <div id="elements-falling">
-          <div id="food-icon">
-            <img class="img-food" src="/assets/food.png" alt="food icon" />
-          </div>
-          <div id="bush-icon">
-            <img class="img-bush" src="/assets/bush.png" alt="bush icon" />
-          </div>
-          <div id="cat-icon">
-            <img class="img-cat" src="/assets/cat.png" alt="cat icon" />
-          </div>
-          <!-- <div id="bush">
-          <img class="img-bush" src="/assets/bush.png" alt="bush icon" />
-        </div>  -->
-        </div>
-
-        <div id="dog">
-          <img class="img-dog" src="/assets/dog.png" alt="game dog" />
-        </div>
+        <div id="elements-falling"></div>
       </div>
-      <div id="timer">Timer: 10</div>
     </div>
 
     <!-- End game screen -->
     <div id="game-end">
-      <!-- <img src="./images/logo.png" alt="" class="logo-img" /> -->
       <h1>Game Over</h1>
       <br />
       <button id="restart-button">Restart</button>
     </div>
+    <script type="text/javascript" src="js/component.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
     <script type="text/javascript" src="js/game.js"></script>
     <script type="text/javascript" src="js/player.js"></script>
